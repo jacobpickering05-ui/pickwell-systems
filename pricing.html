@@ -11,14 +11,17 @@
 :root{--paper:#F5F2EC;--ink:#0A0A0B;--deep:#080C18;--muted:#8A94A6;--rule:#E2DED6;--body:#55524D}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:'Sora',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:1120px;margin:0 auto;padding:26px 32px}
+.wrap{max-width:min(1680px,94vw);margin:0 auto;padding:26px clamp(22px,3vw,48px)}
 nav{display:flex;justify-content:center;margin-bottom:clamp(56px,8vw,92px)}
-.pill{display:flex;align-items:center;gap:26px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:7px 7px 7px 16px}
+.pill{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);background:#fff;border:1px solid var(--rule);border-radius:999px;padding:9px 9px 9px 22px;width:100%}
+.pill .mark{margin-right:auto}
+.pill .cta{margin-left:auto}
+.pill a{white-space:nowrap}
 .mark{width:28px;height:28px;border-radius:9px;background:var(--ink);color:var(--paper);font-family:'Yeseva One',serif;font-size:12px;display:flex;align-items:center;justify-content:center;text-decoration:none}
-.pill a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .25s ease}
+.pill a{font-size:clamp(13px,1.05vw,15.5px);color:var(--muted);text-decoration:none;transition:color .25s ease}
 .pill a:hover{color:var(--ink)}
 .pill a.on{color:var(--ink)}
-.pill .cta{background:var(--ink);color:var(--paper);font-size:13px;padding:10px 18px;border-radius:999px}
+.pill .cta{background:var(--ink);color:var(--paper);font-size:clamp(13px,1.05vw,15.5px);padding:11px 22px;border-radius:999px}
 .pill .cta:hover{color:var(--paper);background:#000}
 .ptitle{font-family:'Yeseva One',serif;font-weight:400;font-size:clamp(38px,5.6vw,74px);line-height:1.04;letter-spacing:-.012em;margin-bottom:16px}
 .plede{font-size:clamp(14px,1.4vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:58ch}
@@ -63,7 +66,11 @@ footer a:hover{color:var(--ink)}
 .note{border-top:1px solid var(--rule);padding:clamp(22px,3vw,32px) 0;display:grid;grid-template-columns:.44fr 1fr;gap:clamp(16px,4.5vw,60px);align-items:start}
 .note h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(19px,2.1vw,27px);line-height:1.24}
 .note p{font-size:clamp(14px,1.35vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:54ch}
-@media(max-width:900px){.tiles{grid-template-columns:1fr;gap:26px}.badge{left:26px;transform:none}.note{grid-template-columns:1fr;gap:10px}}
+@media(max-width:900px){
+  .pill{width:auto;gap:14px;padding:6px 6px 6px 12px}
+  .pill .mark{margin-right:0}
+  .pill .cta{margin-left:0;padding:10px 16px}
+.tiles{grid-template-columns:1fr;gap:26px}.badge{left:26px;transform:none}.note{grid-template-columns:1fr;gap:10px}}
 @media(prefers-reduced-motion:reduce){.tile,.start{transition:none}}
 </style>
 </head>
@@ -75,7 +82,7 @@ footer a:hover{color:var(--ink)}
       <a href="index.html">Home</a>
       <a href="pricing.html" class="on">Pricing</a>
       <a href="policy.html">Policy</a>
-      <a class="cta" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join PWS</a>
+      <a class="cta" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Join PWS</a>
     </div>
   </nav>
 
@@ -98,7 +105,7 @@ footer a:hover{color:var(--ink)}
         <li class="off">No CRM or follow-up</li>
         <li class="off">Edits quoted hourly</li>
       </ul>
-      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Launch <i>&#8599;</i></a>
+      <a class="start" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Start with Launch <i>&#8599;</i></a>
     </div>
 
     <div class="tile">
@@ -115,7 +122,7 @@ footer a:hover{color:var(--ink)}
         <li>Hosting included</li>
         <li>Five edits per quarter</li>
       </ul>
-      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Managed <i>&#8599;</i></a>
+      <a class="start" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Start with Managed <i>&#8599;</i></a>
     </div>
 
     <div class="tile feature">
@@ -131,7 +138,7 @@ footer a:hover{color:var(--ink)}
         <li>48-hour turnaround on changes</li>
         <li>Priority in the queue</li>
       </ul>
-      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Managed+ <i>&#8599;</i></a>
+      <a class="start" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Start with Managed+ <i>&#8599;</i></a>
     </div>
 
   </div>
@@ -143,7 +150,7 @@ footer a:hover{color:var(--ink)}
     </div>
     <div class="note">
       <h3>What counts as an edit</h3>
-      <p>A text change, an image swap, a price or contact update, or an adjustment to one section on an existing page. New pages, new features and redesigns are quoted separately. Unused edits do not roll over.</p>
+      <p>A text change, an image swap, a price or contact update, or an adjustment to one section on an existing page. New pages, new features and redesigns are quoted separately. Unused edits expire at the end of the month or quarter and do not roll over into the next.</p>
     </div>
     <div class="note">
       <h3>What you own</h3>
@@ -161,7 +168,7 @@ footer a:hover{color:var(--ink)}
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="policy.html">Policy</a>
-      <a href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join</a>
+      <a href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Join</a>
     </div>
   </footer>
 </div>

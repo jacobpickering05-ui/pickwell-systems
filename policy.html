@@ -11,14 +11,17 @@
 :root{--paper:#F5F2EC;--ink:#0A0A0B;--deep:#080C18;--muted:#8A94A6;--rule:#E2DED6;--body:#55524D}
 *{box-sizing:border-box;margin:0;padding:0}
 body{background:var(--paper);color:var(--ink);font-family:'Sora',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
-.wrap{max-width:1120px;margin:0 auto;padding:26px 32px}
+.wrap{max-width:min(1680px,94vw);margin:0 auto;padding:26px clamp(22px,3vw,48px)}
 nav{display:flex;justify-content:center;margin-bottom:clamp(56px,8vw,92px)}
-.pill{display:flex;align-items:center;gap:26px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:7px 7px 7px 16px}
+.pill{display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);background:#fff;border:1px solid var(--rule);border-radius:999px;padding:9px 9px 9px 22px;width:100%}
+.pill .mark{margin-right:auto}
+.pill .cta{margin-left:auto}
+.pill a{white-space:nowrap}
 .mark{width:28px;height:28px;border-radius:9px;background:var(--ink);color:var(--paper);font-family:'Yeseva One',serif;font-size:12px;display:flex;align-items:center;justify-content:center;text-decoration:none}
-.pill a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .25s ease}
+.pill a{font-size:clamp(13px,1.05vw,15.5px);color:var(--muted);text-decoration:none;transition:color .25s ease}
 .pill a:hover{color:var(--ink)}
 .pill a.on{color:var(--ink)}
-.pill .cta{background:var(--ink);color:var(--paper);font-size:13px;padding:10px 18px;border-radius:999px}
+.pill .cta{background:var(--ink);color:var(--paper);font-size:clamp(13px,1.05vw,15.5px);padding:11px 22px;border-radius:999px}
 .pill .cta:hover{color:var(--paper);background:#000}
 .ptitle{font-family:'Yeseva One',serif;font-weight:400;font-size:clamp(38px,5.6vw,74px);line-height:1.04;letter-spacing:-.012em;margin-bottom:16px}
 .plede{font-size:clamp(14px,1.4vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:58ch}
@@ -41,7 +44,11 @@ footer a:hover{color:var(--ink)}
 .term strong{font-weight:500;color:var(--ink)}
 .closer{border-top:1px solid var(--rule);margin-top:clamp(40px,5vw,60px);padding-top:clamp(38px,5vw,58px);text-align:center}
 .closer p{font-size:clamp(14px,1.35vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:52ch;margin:0 auto 26px}
-@media(max-width:900px){.term{grid-template-columns:1fr;gap:10px}}
+@media(max-width:900px){
+  .pill{width:auto;gap:14px;padding:6px 6px 6px 12px}
+  .pill .mark{margin-right:0}
+  .pill .cta{margin-left:0;padding:10px 16px}
+.term{grid-template-columns:1fr;gap:10px}}
 @media(prefers-reduced-motion:reduce){.start{transition:none}}
 </style>
 </head>
@@ -53,7 +60,7 @@ footer a:hover{color:var(--ink)}
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="policy.html" class="on">Policy</a>
-      <a class="cta" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join PWS</a>
+      <a class="cta" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Join PWS</a>
     </div>
   </nav>
 
@@ -76,7 +83,8 @@ footer a:hover{color:var(--ink)}
     <div class="term">
       <h3>What counts as an edit</h3>
       <p>One edit is a text change, an image swap, a price or contact update, or an adjustment to a single section on a page that already exists.</p>
-      <p>New pages, new features and redesigns fall outside the plan and are quoted separately. Unused edits do not roll over between periods.</p>
+      <p>New pages, new features and redesigns fall outside the plan and are quoted separately.</p>
+      <p><strong>Edits do not roll over.</strong> Managed includes five edits per quarter and Managed+ includes four per month. Any that go unused expire at the end of that quarter or month and do not carry into the next one, and they cannot be banked, combined or transferred.</p>
     </div>
 
     <div class="term">
@@ -111,7 +119,7 @@ footer a:hover{color:var(--ink)}
 
   <div class="closer">
     <p>Questions about any of this before you commit? Ask first. It is a short conversation and it saves both of us the awkward one later.</p>
-    <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Book a call <i>&#8599;</i></a>
+    <a class="start" href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Book a call <i>&#8599;</i></a>
   </div>
 
   <footer>
@@ -120,7 +128,7 @@ footer a:hover{color:var(--ink)}
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="policy.html">Policy</a>
-      <a href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join</a>
+      <a href="https://api.leadconnectorhq.com/widget/booking/LNqZBNdz7teQfm3f24tZ">Join</a>
     </div>
   </footer>
 </div>
