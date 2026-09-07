@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Plans — Pickwell Systems</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Sora:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#F5F2EC;--ink:#0A0A0B;--deep:#080C18;--muted:#8A94A6;--rule:#E2DED6;--body:#55524D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--paper);color:var(--ink);font-family:'Sora',system-ui,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 32px}
+nav{display:flex;justify-content:center;margin-bottom:clamp(56px,8vw,92px)}
+.pill{display:flex;align-items:center;gap:26px;background:#fff;border:1px solid var(--rule);border-radius:999px;padding:7px 7px 7px 16px}
+.mark{width:28px;height:28px;border-radius:9px;background:var(--ink);color:var(--paper);font-family:'Yeseva One',serif;font-size:12px;display:flex;align-items:center;justify-content:center;text-decoration:none}
+.pill a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .25s ease}
+.pill a:hover{color:var(--ink)}
+.pill a.on{color:var(--ink)}
+.pill .cta{background:var(--ink);color:var(--paper);font-size:13px;padding:10px 18px;border-radius:999px}
+.pill .cta:hover{color:var(--paper);background:#000}
+.ptitle{font-family:'Yeseva One',serif;font-weight:400;font-size:clamp(38px,5.6vw,74px);line-height:1.04;letter-spacing:-.012em;margin-bottom:16px}
+.plede{font-size:clamp(14px,1.4vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:58ch}
+.start{display:inline-flex;align-items:center;gap:10px;background:var(--ink);color:var(--paper);font-size:13px;padding:13px 24px;border-radius:999px;text-decoration:none;transition:transform .3s cubic-bezier(.22,.61,.36,1),background .3s ease}
+.start:hover{transform:translateY(-2px);background:#000}
+.start:focus-visible{outline:2px solid var(--ink);outline-offset:4px}
+.start i{width:19px;height:19px;border-radius:999px;background:var(--paper);color:var(--ink);font-style:normal;font-size:10px;display:flex;align-items:center;justify-content:center}
+footer{border-top:1px solid var(--rule);margin-top:clamp(70px,10vw,120px);padding:34px 0 54px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap}
+footer span{font-family:'Yeseva One',serif;font-size:17px}
+footer a{font-size:13px;color:var(--muted);text-decoration:none;margin-left:22px}
+footer a:hover{color:var(--ink)}
+
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(14px,1.8vw,22px);margin-top:clamp(44px,6vw,72px);align-items:start}
+.tile{background:#fff;border:1px solid var(--rule);border-radius:22px;padding:clamp(24px,2.6vw,32px);
+  box-shadow:0 1px 2px rgba(10,10,11,.05),0 10px 24px -14px rgba(10,10,11,.22);
+  transition:transform .4s cubic-bezier(.22,.61,.36,1),box-shadow .4s cubic-bezier(.22,.61,.36,1);position:relative}
+.tile:hover{transform:translateY(-6px);box-shadow:0 2px 4px rgba(10,10,11,.07),0 22px 44px -18px rgba(10,10,11,.3)}
+.tile.feature{background:var(--deep);border-color:var(--deep);
+  box-shadow:0 2px 4px rgba(10,10,11,.16),0 22px 46px -18px rgba(10,10,11,.42)}
+.tile.feature:hover{box-shadow:0 3px 6px rgba(10,10,11,.2),0 34px 64px -20px rgba(10,10,11,.5)}
+.badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--deep);color:var(--paper);
+  font-size:11px;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.tname{font-family:Georgia,'Times New Roman',serif;font-size:clamp(21px,2.2vw,27px);line-height:1.2;margin-bottom:6px}
+.tsum{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.6;min-height:2.6em}
+.tprice{font-family:'Yeseva One',serif;font-size:clamp(30px,3.4vw,42px);line-height:1.1;margin:22px 0 3px}
+.tsub{font-size:12.5px;color:var(--muted);font-weight:300;padding-bottom:20px;border-bottom:1px solid var(--rule)}
+.tile ul{list-style:none;margin:20px 0 26px;display:flex;flex-direction:column;gap:11px}
+.tile li{font-size:13.5px;line-height:1.55;color:var(--body);font-weight:300;padding-left:17px;position:relative}
+.tile li::before{content:"";position:absolute;left:0;top:.56em;width:6px;height:6px;border-radius:999px;background:var(--muted)}
+.tile li.off{color:#A9A49D}
+.tile li.off::before{background:none;border:1px solid #C9C3BB}
+.tile .start{width:100%;justify-content:center}
+.tile.feature .tname,.tile.feature .tprice{color:var(--paper)}
+.tile.feature .tsum,.tile.feature .tsub{color:#9AA3B2}
+.tile.feature .tsub{border-bottom-color:rgba(245,242,236,.18)}
+.tile.feature li{color:#D9DCE2}
+.tile.feature li::before{background:#7E8899}
+.tile.feature .start{background:var(--paper);color:var(--deep)}
+.tile.feature .start:hover{background:#fff}
+.tile.feature .start i{background:var(--deep);color:var(--paper)}
+.notes{margin-top:clamp(56px,7vw,88px)}
+.note{border-top:1px solid var(--rule);padding:clamp(22px,3vw,32px) 0;display:grid;grid-template-columns:.44fr 1fr;gap:clamp(16px,4.5vw,60px);align-items:start}
+.note h3{font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:clamp(19px,2.1vw,27px);line-height:1.24}
+.note p{font-size:clamp(14px,1.35vw,16.5px);line-height:1.72;color:var(--body);font-weight:300;max-width:54ch}
+@media(max-width:900px){.tiles{grid-template-columns:1fr;gap:26px}.badge{left:26px;transform:none}.note{grid-template-columns:1fr;gap:10px}}
+@media(prefers-reduced-motion:reduce){.tile,.start{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="pill">
+      <a class="mark" href="index.html" aria-label="Pickwell Systems home">P</a>
+      <a href="index.html">Home</a>
+      <a href="pricing.html" class="on">Pricing</a>
+      <a href="policy.html">Policy</a>
+      <a class="cta" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join PWS</a>
+    </div>
+  </nav>
+
+  <h1 class="ptitle">Plans</h1>
+  <p class="plede">Three ways to work together. Take the site on its own, or take the site with the lead system behind it and let us keep both running.</p>
+
+  <div class="tiles">
+
+    <div class="tile">
+      <div class="tname">Launch</div>
+      <div class="tsum">A standalone site you own and host yourself.</div>
+      <div class="tprice">$750</div>
+      <div class="tsub">One-time. No monthly.</div>
+      <ul>
+        <li>Two-page custom site</li>
+        <li>Design, copywriting and build</li>
+        <li>Mobile tested</li>
+        <li>Domain setup and deployment</li>
+        <li class="off">You host the site</li>
+        <li class="off">No CRM or follow-up</li>
+        <li class="off">Edits quoted hourly</li>
+      </ul>
+      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Launch <i>&#8599;</i></a>
+    </div>
+
+    <div class="tile">
+      <div class="tname">Managed</div>
+      <div class="tsum">Site plus the lead system, hosted and maintained.</div>
+      <div class="tprice">$1,250</div>
+      <div class="tsub">Build price, then $500/month</div>
+      <ul>
+        <li>Up to five pages</li>
+        <li>Everything in Launch</li>
+        <li>Lead capture and instant response</li>
+        <li>Automatic follow-up until they book</li>
+        <li>CRM dashboard</li>
+        <li>Hosting included</li>
+        <li>Five edits per quarter</li>
+      </ul>
+      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Managed <i>&#8599;</i></a>
+    </div>
+
+    <div class="tile feature">
+      <div class="badge">Most popular</div>
+      <div class="tname">Managed+</div>
+      <div class="tsum">More room to grow and changes handled every week.</div>
+      <div class="tprice">$1,000</div>
+      <div class="tsub">Lower build price, then $800/month</div>
+      <ul>
+        <li>Up to eight pages</li>
+        <li>Everything in Managed</li>
+        <li>Four edits per month</li>
+        <li>48-hour turnaround on changes</li>
+        <li>Priority in the queue</li>
+      </ul>
+      <a class="start" href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Start with Managed+ <i>&#8599;</i></a>
+    </div>
+
+  </div>
+
+  <div class="notes">
+    <div class="note">
+      <h3>Why Managed+ costs less to build</h3>
+      <p>The higher monthly covers more of the work over time, so the build price comes down. Managed is cheaper across a full year; Managed+ is easier to start and gets you changes every week instead of five a quarter. Pick based on how often you expect the site to change.</p>
+    </div>
+    <div class="note">
+      <h3>What counts as an edit</h3>
+      <p>A text change, an image swap, a price or contact update, or an adjustment to one section on an existing page. New pages, new features and redesigns are quoted separately. Unused edits do not roll over.</p>
+    </div>
+    <div class="note">
+      <h3>What you own</h3>
+      <p>Your domain and your lead data are yours on every plan. On Launch the finished files are handed over once the balance clears. On Managed and Managed+ the site stays live as long as the plan is active.</p>
+    </div>
+    <div class="note">
+      <h3>Before we start</h3>
+      <p>Every plan begins with a 50% deposit, and the balance is due when the site goes live. The full terms are on the <a href="policy.html" style="color:var(--ink)">policy page</a>.</p>
+    </div>
+  </div>
+
+  <footer>
+    <span>Pickwell Systems</span>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="policy.html">Policy</a>
+      <a href="https://REPLACE-WITH-YOUR-GHL-BOOKING-LINK">Join</a>
+    </div>
+  </footer>
+</div>
+</body>
+</html>
