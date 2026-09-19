@@ -32,8 +32,11 @@ footer a:hover{color:var(--ink)}
 .tile.feature{background:var(--deep);border-color:var(--deep);
   box-shadow:0 2px 4px rgba(10,10,11,.16),0 22px 46px -18px rgba(10,10,11,.42)}
 .tile.feature:hover{box-shadow:0 3px 6px rgba(10,10,11,.2),0 34px 64px -20px rgba(10,10,11,.5)}
-.badge{position:absolute;top:-11px;left:50%;transform:translateX(-50%);background:var(--deep);color:var(--paper);
-  font-size:11px;padding:5px 13px;border-radius:999px;white-space:nowrap}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);z-index:2;
+  display:inline-flex;align-items:center;background:var(--paper);color:var(--ink);
+  border:1px solid var(--ink);box-shadow:0 6px 16px -6px rgba(10,10,11,.45);
+  font-size:10.5px;font-weight:500;letter-spacing:.09em;text-transform:uppercase;
+  padding:6px 14px;border-radius:999px;white-space:nowrap}
 .tname{font-family:Georgia,'Times New Roman',serif;font-size:clamp(21px,2.2vw,27px);line-height:1.2;margin-bottom:6px}
 .tsum{font-size:12.5px;color:var(--muted);font-weight:300;line-height:1.6;min-height:2.6em}
 .tprice{font-family:'Yeseva One',serif;font-size:clamp(30px,3.4vw,42px);line-height:1.1;margin:22px 0 3px}
