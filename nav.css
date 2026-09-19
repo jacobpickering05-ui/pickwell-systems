@@ -1,0 +1,59 @@
+/* ============================================================
+   PWS shared nav: single source of truth for the menu bar.
+   Every page links this file. Do NOT add .pill/.mark/nav sizing
+   rules inside individual pages, or the bar will drift again.
+   Per-page nav{margin-bottom} (space below the bar) is fine.
+   ============================================================ */
+html{scrollbar-gutter:stable}
+
+:root{
+  --nav-w:clamp(720px,75vw,1104px);   /* matches the Home page bar: 1080px on a 1440px screen, caps at 1104px */
+  --nav-fs:clamp(13px,1.05vw,15.5px);
+}
+
+nav{
+  display:flex;justify-content:center;
+  width:var(--nav-w);
+  margin-left:calc(50% - var(--nav-w)/2);   /* same width even inside a narrower .wrap */
+}
+
+.pill{
+  display:flex;align-items:center;
+  width:100%;
+  gap:clamp(20px,2.4vw,40px);
+  padding:9px 9px 9px 22px;
+  background:#fff;border:1px solid var(--rule);border-radius:999px;
+}
+.pill a{
+  font-family:'Sora',system-ui,sans-serif;font-size:var(--nav-fs);font-weight:400;
+  line-height:1.2;white-space:nowrap;
+  color:var(--muted);text-decoration:none;transition:color .25s ease;
+}
+.pill a:hover,.pill a.on{color:var(--ink)}   /* active = color only, never weight/size */
+
+.mark{
+  flex:0 0 auto;width:28px;height:28px;margin-right:auto;border-radius:9px;
+  background:var(--ink);color:var(--paper);
+  font-family:'Yeseva One',serif;font-size:12px;line-height:1;
+  display:flex;align-items:center;justify-content:center;
+}
+.pill a.mark,.pill a.mark:hover{color:var(--paper);font-family:'Yeseva One',serif;font-size:12px}
+
+.pill .cta{
+  margin-left:auto;padding:11px 22px;border-radius:999px;
+  background:var(--ink);color:var(--paper);
+}
+.pill .cta:hover{background:#000;color:var(--paper)}
+
+@media(max-width:820px){
+  nav{width:100%;margin-left:0}
+  .pill{width:auto;gap:14px;padding:6px 6px 6px 12px}
+  .pill a{font-size:12px}
+  .mark{margin-right:0}
+  .pill .cta{margin-left:0;padding:10px 16px}
+}
+@media(max-width:400px){
+  .pill{gap:10px;padding:5px 5px 5px 10px}
+  .pill a{font-size:11.5px}
+  .pill .cta{padding:9px 13px}
+}
